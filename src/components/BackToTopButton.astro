@@ -1,0 +1,47 @@
+---
+
+---
+
+<button
+  id="btn-back-to-top"
+  type="button"
+  class="z-10 fixed hidden bottom-5 end-5 rounded-full bg-teal-700 p-3 text-xs font-medium uppercase leading-tight text-white shadow-md
+  transition duration-500 ease-in hover:bg-teal-800 hover:shadow-lg focus:bg-teal-800 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-teal-900 active:shadow-lg"
+>
+  <span class="[&>svg]:w-6">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-up"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M6 15l6 -6l6 6"></path>
+    </svg>
+  </span>
+</button>
+
+<script is:inline>
+  // document.addEventListener("astro:page-load", () => {
+  const mybutton = document.getElementById("btn-back-to-top");
+  mybutton.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+  window.addEventListener("scroll", () => {
+    if (
+      document.body.scrollTop > 20 ||
+      document.documentElement.scrollTop > 20
+    ) {
+      mybutton.classList.remove("hidden");
+    } else {
+      mybutton.classList.add("hidden");
+    }
+  });
+  // });
+</script>

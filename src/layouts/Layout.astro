@@ -1,0 +1,76 @@
+---
+import "@fontsource/poppins";
+// import { ViewTransitions } from "astro:transitions";
+import BackToTopButton from "../components/BackToTopButton.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+
+import SonnerToaster from "../components/SonnerToast";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- <ViewTransitions /> -->
+    <meta charset="UTF-8" />
+    <meta name="author" content="Edinson Medina Chinga" />
+    <meta
+      name="description"
+      content="Página web de Igo Courier, hecha con el framework Astro"
+    />
+    <meta
+      name="keywords"
+      content="Courier,Igo Courier,Igo Courier Web,Igo Courier Astro"
+    />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Navbar />
+    <slot />
+    <SonnerToaster client:load />
+    <Footer />
+    <BackToTopButton />
+    <style is:global>
+      * {
+        font-family: "Poppins", sans-serif;
+      }
+
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      /* Track */
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: #004e59;
+        border-radius: 5px;
+      }
+
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: #004e59;
+      }
+    </style>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+---
+import ComplaintForm from "../components/ComplaintForm.vue";
+import Layout from "../layouts/Layout.astro";
+import { LIBRO_RECLAMACIONES_DATA } from "../static/LibroReclamaciones.data";
+import { splitParagraph } from "../utils/UtilFunctions";
+---
+
+<Layout
+  title=`Igo Courier, tu solución confiable para envíos locales urgentes | Libro de Reclamaciones`
+>
+  <section
+    #libroReclamaciones
+    class="bg-white dark:bg-gray-900 py-12 flex flex-col justify-center items-center"
+  >
+    <div class="pb-8 w-full max-w-screen-xl xl:px-0 px-4">
+      <h2
+        class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-igo-light-bg text-center animate-fade-up animate-once animate-duration-[300ms] animate-ease-in"
+      >
+        {LIBRO_RECLAMACIONES_DATA.title}
+      </h2>
+    </div>
+
+    <div
+      class="flex flex-col justify-center items-stretch w-full max-w-screen-xl xl:px-0 px-4 pb-24"
+    >
+      {
+        splitParagraph(LIBRO_RECLAMACIONES_DATA.description, "#br#").map(
+          (paraghaph) => (
+            <>
+              <p class="text-gray-500 dark:text-gray-400 text-xl text-pretty animate-fade-up animate-once animate-duration-[400ms] animate-ease-in">
+                {paraghaph}
+              </p>
+              <br />
+            </>
+          )
+        )
+      }
+      <div
+        class="sm:basis-1/2 basis-full bg-white dark:bg-gray-900 w-full animate-fade-up animate-once animate-duration-[450ms] animate-ease-in"
+      >
+        <div class="px-4 sm:px-0">
+          <ComplaintForm client:load />
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,36 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { NOSOTROS_DATA } from "../static/Nosotros.data";
+import { splitParagraph } from "../utils/UtilFunctions";
+---
+
+<Layout
+  title=`Igo Courier, tu solución confiable para envíos locales urgentes | Nosotros`
+>
+  <section
+    #nosotros
+    class="bg-white dark:bg-gray-900 py-12 flex flex-col justify-center items-center"
+  >
+    <div class="pb-8 w-full max-w-screen-xl xl:px-0 px-4">
+      <h2
+        class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-igo-light-bg text-center animate-fade-up animate-once animate-duration-[400ms] animate-ease-in"
+      >
+        {NOSOTROS_DATA.title}
+      </h2>
+    </div>
+    <div
+      class="flex flex-col service-list w-full max-w-screen-xl xl:px-0 px-4 pb-24"
+    >
+      {
+        splitParagraph(NOSOTROS_DATA.description, "#br#").map((paraghaph) => (
+          <>
+            <h4 class="text-gray-500 dark:text-gray-400 text-xl text-pretty animate-fade-up animate-once animate-duration-[400ms] animate-ease-in">
+              {paraghaph}
+            </h4>
+            <br />
+          </>
+        ))
+      }
+    </div>
+  </section>
+</Layout>

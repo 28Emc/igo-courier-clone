@@ -1,0 +1,74 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { TERMINOS_Y_CONDICIONES_DATA } from "../static/TerminosYCondiciones.data";
+import { splitParagraph } from "../utils/UtilFunctions";
+---
+
+<Layout
+  title=`Igo Courier, tu solución confiable para envíos locales urgentes | Términos y Condiciones`
+>
+  <section
+    #terminosYCondiciones
+    class="bg-white dark:bg-gray-900 py-12 flex flex-col justify-center items-center"
+  >
+    <div class="pb-8 w-full max-w-screen-xl xl:px-0 px-4">
+      <h2
+        class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-igo-light-bg text-center animate-fade-up animate-once animate-duration-[300ms] animate-ease-in"
+      >
+        {TERMINOS_Y_CONDICIONES_DATA.title}
+      </h2>
+    </div>
+
+    <div
+      class="flex flex-col justify-center items-stretch w-full max-w-screen-xl xl:px-0 px-4 pb-24"
+    >
+      {
+        splitParagraph(
+          TERMINOS_Y_CONDICIONES_DATA.descriptionHeader,
+          "#br#"
+        ).map((paraghaph) => (
+          <>
+            <p class="text-gray-500 dark:text-gray-400 text-xl text-pretty animate-fade-up animate-once animate-duration-[400ms] animate-ease-in">
+              {paraghaph}
+            </p>
+            <br />
+          </>
+        ))
+      }
+      <ol class="list-decimal text-gray-dark dark:text-igo-light-bg px-4">
+        {
+          TERMINOS_Y_CONDICIONES_DATA.terminos.map((termino) => (
+            <li class="text-xl text-pretty py-2 animate-fade-up animate-once animate-duration-[450ms] animate-ease-in">
+              <div class="text-gray-500">
+                <span class="text-gray-dark dark:text-igo-light-bg font-semibold">
+                  {termino.title}
+                </span>
+                {splitParagraph(termino.description, "#br#").map(
+                  (paraghaph) => (
+                    <>
+                      <ul class="list-disc dark:text-gray-400">{paraghaph}</ul>
+                      <br />
+                    </>
+                  )
+                )}
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+      {
+        splitParagraph(
+          TERMINOS_Y_CONDICIONES_DATA.descriptionFooter,
+          "#br#"
+        ).map((paraghaph) => (
+          <>
+            <p class="text-gray-500 dark:text-gray-400 text-xl text-pretty animate-fade-up animate-once animate-duration-[400ms] animate-ease-in">
+              {paraghaph}
+            </p>
+            <br />
+          </>
+        ))
+      }
+    </div>
+  </section>
+</Layout>

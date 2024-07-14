@@ -1,0 +1,284 @@
+---
+import DynamicImage from "../../components/DynamicImage.astro";
+import Layout from "../../layouts/Layout.astro";
+import { NAVBAR_DATA } from "../../static/Navbar.data";
+import { SERVICES_DATA } from "../../static/Servicios.data";
+
+export function getStaticPaths() {
+  return [
+    { params: { servicio: "programado" } },
+    { params: { servicio: "sameday" } },
+    { params: { servicio: "expres" } },
+    { params: { servicio: "inhouse" } },
+    { params: { servicio: "mensajeria" } },
+    { params: { servicio: "ecommerce" } },
+  ];
+}
+
+const { servicio } = Astro.params;
+const serviceData = SERVICES_DATA.find((s: any) => s.id === servicio)!;
+const userOption = NAVBAR_DATA.acciones.find((a) =>
+  a.texto.includes("Zona clientes")
+)!;
+const recomendedItems = serviceData.recomended;
+const allowedItems = recomendedItems?.filter((s) => s.ok);
+const notAllowedItems = recomendedItems?.filter((s) => !s.ok);
+---
+
+<Layout
+  title=`Igo Courier, tu solución confiable para envíos locales urgentes | ${servicio.toUpperCase()}`
+>
+  <section
+    class="bg-white dark:bg-gray-900 py-12 flex flex-col justify-center items-center"
+  >
+    <div class="pb-4 w-full max-w-screen-xl xl:px-0 px-4">
+      <div class="flex lg:flex-row flex-col justify-between items-center gap-5">
+        <div>
+          <h2
+            class="mb-4 mt-16 sm:text-3xl text-2xl tracking-tight font-bold text-igo-light-text dark:text-igo-dark-icon animate-fade-up animate-once animate-duration-[400ms] animate-ease-in"
+          >
+            {serviceData.title}
+          </h2>
+          <p
+            class="py-3 text-gray-900 dark:text-white sm:text-5xl text-3xl sm:pr-16 pr-0 text-balance animate-fade-up animate-once animate-duration-[400ms] animate-delay-[100ms] animate-ease-in"
+          >
+            {serviceData.subtitle}
+          </p>
+          <p
+            class="py-3 text-gray-500 dark:text-white sm:text-2xl text-md font-light sm:pr-16 pr-0 text-balance animate-fade-up animate-once animate-duration-[400ms] animate-delay-[100ms] animate-ease-in"
+          >
+            {serviceData.subtitleParagraph}
+          </p>
+          <div
+            class="flex flex-row items-center justify-between sm:justify-start gap-2"
+          >
+            <a
+              href="/contacto"
+              target="_self"
+              class="animate-fade-down animate-once animate-duration-300 animate-ease-in flex items-center justify-start py-16 sm:pr-16 pr-0 text-base font-medium text-center
+                rounded-lg text-igo-light-text dark:text-white transition"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-square-plus"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M9 12h6"></path>
+                <path d="M12 9v6"></path>
+                <path
+                  d="M3 5a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14z"
+                ></path>
+              </svg>
+              <span class="ml-2">Ver más</span>
+            </a>
+            <a
+              href={userOption.href}
+              target={userOption.target}
+              class="animate-fade-down animate-once animate-duration-300 animate-ease-in inline-flex items-center justify-center px-4 py-2.5 text-base font-medium text-center
+                rounded-lg text-white bg-igo-dark-bg dark:text-black dark:bg-igo-light-bg transition"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-package-export"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M12 21l-8 -4.5v-9l8 -4.5l8 4.5v4.5"></path>
+                <path d="M12 12l8 -4.5"></path>
+                <path d="M12 12v9"></path>
+                <path d="M12 12l-8 -4.5"></path>
+                <path d="M15 18h7"></path>
+                <path d="M19 15l3 3l-3 3"></path>
+              </svg>
+              <span class="ml-2">Hacer un envío</span>
+            </a>
+          </div>
+        </div>
+        <DynamicImage
+          imagePath={serviceData.imageSrc}
+          altText={serviceData.id}
+          classList="w-[500px] h-[500px] hidden lg:block animate-fade-right animate-once animate-duration-500 animate-delay-[150ms] animate-ease-in"
+          loadingType="eager"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="bg-igo-bg-1 dark:bg-igo-bg-3 py-28 flex flex-col justify-center items-center"
+  >
+    <div class="pb-8 w-full max-w-screen-xl xl:px-0 px-4">
+      <div class="flex flex-col justify-center items-center gap-5">
+        <h2
+          class="mb-4 sm:text-5xl text-2xl tracking-tight font-light text-igo-light-icon dark:text-igo-light-bg animate-fade-up animate-once animate-duration-[400ms] animate-ease-in"
+        >
+          Realiza tu envío <span class="font-extrabold"
+            >{serviceData.title}</span
+          > en {serviceData.steps.length}
+          pasos:
+        </h2>
+        <div class="grid grid-flow-row grid-cols-1 lg:grid-cols-3 gap-8">
+          {
+            serviceData.steps.map((step) => (
+              <div class="flex flex-col items-center justify-center gap-8 text-igo-light-bg">
+                <Fragment set:html={step.svg} />
+                <p class="text-3xl font-semibold text-center">
+                  <span>{step.step}</span>
+                  <br />
+                  <span>{step.title}</span>
+                </p>
+                <p class="text-lg font-light text-center">{step.text}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="bg-white dark:bg-gray-900 py-20 flex flex-col justify-center items-center"
+  >
+    <div class="pb-8 w-full max-w-screen-xl xl:px-0 px-4">
+      <div class="flex lg:flex-row flex-col justify-between items-center gap-5">
+        <h2
+          class="basis-1/3 mb-4 sm:text-4xl text-3xl text-center lg:text-left tracking-tight font-light text-igo-light-text dark:text-igo-light-bg animate-fade-up animate-once animate-duration-[400ms] animate-ease-in"
+        >
+          Servicio recomendado para:
+        </h2>
+        <div
+          class="basis-2/3 grid grid-flow-row sm:grid-cols-4 grid-cols-2 gap-10"
+        >
+          {
+            serviceData.for.map((item) => (
+              <div class="flex flex-col items-center justify-center gap-4 text-igo-light-icon animate-fade-right animate-once animate-duration-[400ms] animate-ease-in">
+                <Fragment set:html={item.svg} />
+                <p class="text-lg font-normal text-center">{item.title}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="bg-igo-bg-1 dark:bg-igo-bg-3 py-28 flex flex-col justify-center items-center"
+  >
+    <div class="pb-8 w-full max-w-screen-xl xl:px-0 px-4">
+      <div class="flex flex-col justify-center items-center gap-5">
+        <h2
+          class="mb-4 sm:text-5xl text-2xl tracking-tight font-light text-igo-light-icon dark:text-igo-light-bg animate-fade-up animate-once animate-duration-[400ms] animate-ease-in"
+        >
+          ¿Qué puedo enviar?
+        </h2>
+        <div class="flex flex-col lg:flex-row gap-5 mx-auto max-w-screen-xl">
+          <div
+            class="bg-igo-light-bg dark:bg-gray-900 p-5 rounded-3xl border-2 border-igo-bg-2"
+          >
+            <div
+              class="flex flex-col sm:flex-col justify-center items-center w-12 h-12 rounded-full bg-igo-bg-2 text-igo-light-bg"
+            >
+              <p class="text-2xl">SI</p>
+            </div>
+
+            <div
+              class="mt-5 grid grid-cols-2 sm:grid-cols-3 gap-5 bg-igo-light-bg dark:bg-gray-900"
+            >
+              {
+                allowedItems.map((item) => (
+                  <div class="bg-igo-light-bg dark:bg-gray-900 p-5 rounded-3xl border-2 border-igo-bg-2">
+                    <Fragment set:html={item.svg} />
+                    <h3 class="mb-2 text-xl font-bold text-center text-igo-dark-bg dark:text-igo-light-bg">
+                      {item.title}
+                    </h3>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+
+          <div
+            data-aos="fade-up"
+            data-aos-duration="700"
+            data-aos-delay="100"
+            data-aos-once="true"
+            class="bg-igo-light-bg dark:bg-gray-900 p-5 rounded-3xl border-2 border-igo-bg-2"
+          >
+            <div
+              class="flex flex-col sm:flex-col justify-center items-center w-12 h-12 rounded-full bg-red-500 text-igo-light-bg"
+            >
+              <p class="text-2xl">NO</p>
+            </div>
+
+            <div
+              class="mt-5 grid grid-cols-2 sm:grid-cols-3 gap-5 bg-igo-light-bg dark:bg-gray-900"
+            >
+              {
+                notAllowedItems.map((item) => (
+                  <div class="bg-igo-light-bg dark:bg-gray-900 p-5 rounded-3xl border-2 border-igo-bg-2">
+                    <Fragment set:html={item.svg} />
+                    <h3 class="mb-2 text-xl font-bold text-center text-igo-dark-bg dark:text-igo-light-bg">
+                      {item.title}
+                    </h3>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="bg-white dark:bg-gray-900 pt-20 pb-40 flex flex-col justify-center items-center"
+  >
+    <div class="px-4 lg:px-6 mx-auto max-w-screen-xl">
+      <div class="pt-14 pb-36 rounded-3xl bg-igo-bg-1 dark:bg-igo-bg-3">
+        <h2
+          class="mb-4 sm:text-4xl text-3xl tracking-tight font-extrabold text-igo-dark-text text-center"
+        >
+          Beneficios para <span class="font-extrabold text-igo-light-icon"
+            >ti</span
+          >
+        </h2>
+      </div>
+      <div
+        class="md:grid flex flex-col md:grid-cols-2 lg:grid-cols-3 gap-12 -m-32 pb-20 sm:px-16 px-4 mx-auto max-w-screen-xl"
+      >
+        {
+          serviceData.benefits.map((benefit, idx) => (
+            <div class="bg-igo-light-bg dark:bg-gray-900 p-5 rounded-3xl border-2 border-igo-bg-2">
+              <div class="flex justify-center items-center w-8 h-8 rounded-full bg-igo-bg-2 text-igo-light-bg">
+                <p class="text-lg">{idx + 1}</p>
+              </div>
+              <Fragment set:html={benefit.svg} />
+              <h3 class="mb-2 text-xl font-bold sm:text-left text-center dark:text-igo-light-icon">
+                {benefit.title}
+              </h3>
+              <p class="text-gray-500 dark:text-igo-dark-text text-center sm:text-left text-balance">
+                {benefit.description}
+              </p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,76 @@
+---
+import ContactForm from "../components/ContactForm.vue";
+import DynamicImage from "../components/DynamicImage.astro";
+import Layout from "../layouts/Layout.astro";
+import { CONTACTO_DATA } from "../static/Contacto.data";
+import { splitParagraph } from "../utils/UtilFunctions";
+---
+
+<Layout
+  title=`Igo Courier, tu solución confiable para envíos locales urgentes | Contacto`
+>
+  <section
+    #nosotros
+    class="bg-white dark:bg-gray-900 py-12 flex flex-col justify-center items-center"
+  >
+    <div class="pb-8 w-full max-w-screen-xl xl:px-0 px-4">
+      <h2
+        class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-igo-light-bg text-center animate-fade-up animate-once animate-duration-[400ms] animate-ease-in"
+      >
+        {CONTACTO_DATA.title}
+      </h2>
+    </div>
+
+    <div
+      class="space-y-8 flex flex-col lg:flex-row justify-center items-stretch gap-6 md:space-y-0 w-full max-w-screen-xl xl:px-0 px-4 animate-fade-up animate-once animate-duration-[400ms] animate-ease-in"
+    >
+      <DynamicImage
+        imagePath="/src/assets/images/contacto-contact-page.svg"
+        altText="contact-img"
+        classList="md:w-1/3 w-1/2 mx-auto"
+        loadingType="eager"
+      />
+
+      <div class="sm:basis-1/2 basis-full">
+        {
+          splitParagraph(CONTACTO_DATA.description, "#br#").map((paraghaph) => (
+            <>
+              <h4 class="text-gray-500 dark:text-gray-400 text-xl text-pretty animate-fade-up animate-once animate-duration-[400ms] animate-ease-in">
+                {paraghaph}
+              </h4>
+              <br />
+            </>
+          ))
+        }
+
+        <div class="grid sm:grid-cols-3 grid-cols-1 sm:gap-8 gap-4">
+          {
+            CONTACTO_DATA.contacts.map((contacto) => (
+              <div class="flex flex-col items-center gap-1 animate-fade-up animate-once animate-duration-[500ms] animate-ease-in py-4">
+                <Fragment set:html={contacto.svg} />
+                <span class="text-xl text-igo-light-text dark:text-igo-light-bg font-semibold">
+                  {contacto.title}
+                </span>
+                <span class="text-md text-gray-500">
+                  {contacto.description}
+                </span>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="space-y-8 flex flex-col sm:flex-row justify-center md:space-y-0 w-full max-w-screen-xl xl:px-0 px-4"
+    >
+      <section
+        class="bg-white dark:bg-gray-900 w-full animate-fade-up animate-once animate-duration-[400ms] animate-ease-in"
+      >
+        <div class="px-4 sm:px-0">
+          <ContactForm client:load />
+        </div>
+      </section>
+    </div>
+  </section>
+</Layout>

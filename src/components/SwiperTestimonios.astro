@@ -1,0 +1,83 @@
+---
+import { splitParagraph } from "../utils/UtilFunctions";
+
+interface Props {
+  testimonios: any[];
+}
+
+const { testimonios } = Astro.props;
+---
+
+<div class="swiper">
+  <div class="swiper-wrapper">
+    {
+      testimonios.map((testimonio) => (
+        <div class="swiper-slide">
+          {splitParagraph(testimonio.description, "#br#").map((paragraph) => (
+            <blockquote class="mx-auto mb-8 max-w-2xl text-gray-500 dark:text-gray-300">
+              {paragraph}
+            </blockquote>
+          ))}
+          {testimonio.person && (
+            <div class="flex flex-col justify-center items-center space-x-3">
+              <img
+                src={testimonio.person.imageSrc}
+                alt="testimonio pic"
+                class="rounded-full w-14 h-14"
+                loading="lazy"
+              />
+              <div class="space-y-0.5 font-medium dark:text-white text-center">
+                <div class="font-semibold text-lg text-igo-light-text dark:text-igo-light-icon">
+                  {testimonio.person.name}
+                </div>
+                <div class="text-sm font-light text-gray-500 dark:text-gray-300">
+                  {testimonio.person.location}
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      ))
+    }
+  </div>
+
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+</div>
+<style>
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: #00de87 !important;
+  }
+</style>
+<script
+  is:inline
+  src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script is:inline>
+  new Swiper(".swiper", {
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 50,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    autoplay: {
+      delay: 5000,
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 1,
+        spaceBetween: 50,
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 50,
+      },
+      1024: {
+        slidesPerView: 2,
+        spaceBetween: 50,
+      },
+    },
+  });
+</script>

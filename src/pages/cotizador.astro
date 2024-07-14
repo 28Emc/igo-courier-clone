@@ -1,0 +1,34 @@
+---
+import EstimatedPricingForm from "../components/EstimatedPricingForm.vue";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title=`Igo Courier, tu solución confiable para envíos locales urgentes | Cotizador`
+>
+  <section
+    #cotizador
+    class="bg-white dark:bg-gray-900 py-12 flex flex-col justify-center items-center"
+  >
+    <div class="pb-8 w-full max-w-screen-xl xl:px-0 px-4">
+      <h2
+        class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-igo-light-bg text-center animate-fade-up animate-once animate-duration-[400ms] animate-ease-in"
+      >
+        Cotizador de envíos
+      </h2>
+      <p
+        class="text-gray-500 sm:text-xl text-center text-pretty animate-fade-up animate-once animate-duration-[400ms] animate-delay-[100ms] animate-ease-in"
+      >
+        Selecciona el servicio deseado, ingresa los detalles del envío, como el
+        peso y las distritos de origen y destino, y obtén una estimación
+        instantánea del costo de envío.
+      </p>
+    </div>
+
+    <div
+      class="rounded-xl w-full max-w-screen-xl xl:px-0 px-4 animate-fade-up animate-once animate-duration-[400ms] animate-delay-[100ms] animate-ease-in"
+    >
+      <EstimatedPricingForm client:load />
+    </div>
+  </section>
+</Layout>
