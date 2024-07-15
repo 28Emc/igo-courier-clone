@@ -1,54 +1,83 @@
-# Astro Starter Kit: Basics
+# Clon de la página web de IGO COURIER
 
-```sh
-npm create astro@latest -- --template basics
-```
+¡Bienvenido al clon  de la página web de IGO COURIER! Esta página ha sido desarrollada con el framework Astro para propósitos educativos únicamente. No será utilizada para lucrar ni reemplazar la página original de IGO COURIER.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Índice
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- [Descripción](#descripción)
+- [Estructura del Proyecto](#estructura-del-proyecto)
+- [Instalación y Uso](#instalación-y-uso)
+- [Tecnologías Utilizadas](#tecnologías-utilizadas)
+- [Licencia](#licencia)
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## Descripción
 
-## 🚀 Project Structure
+Este proyecto es un clon educativo de la página web de IGO COURIER, una empresa de envíos nacionales dentro de la ciudad de Lima. Ofrecemos diversos servicios para satisfacer tus necesidades de envío, incluyendo SAMEDAY, PROGRAMADO, EXPRESS, INHOUSE, MENSAJERÍA y E-COMMERCE. El objetivo de este clon es aprender y practicar el desarrollo web utilizando el framework Astro.
 
-Inside of your Astro project, you'll see the following folders and files:
+## Estructura del Proyecto
+
+El proyecto está organizado de la siguiente manera:
 
 ```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+├── public
+│ ├── assets
+│ └── favicon.ico
+├── src
+│ ├── assets
+│ │ ├── images
+│ │ │ ├── servicios
+│ │ │ │ ├── ...
+│ │ ├── ...
+│ ├── components
+│ ├── layouts
+│ ├── pages
+│ │ ├── servicios
+│ │ │ ├── [servicio].astro
+│ │ ├── _app_.ts
+│ │ ├── contacto.astro
+│ │ ├── cotizador.astro
+│ │ ├── index.astro
+│ │ ├── libro-reclamaciones.astro
+│ │ ├── nosotros.astro
+│ │ ├── terminos-y-condiciones.astro
+│ ├── services
+│ │ ├── ...
+│ ├── static
+│ │ ├── ...
+├── package.json
+└── README.md
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Instalación y Uso
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Sigue estos pasos para instalar y ejecutar el proyecto en tu entorno local:
 
-Any static assets, like images, can be placed in the `public/` directory.
+1. **Clonar el repositorio:**
 
-## 🧞 Commands
+   ```bash
+   git clone https://github.com/tu-usuario/igo-courier-clone.git
+   cd igo-courier-clone
+   ```
 
-All commands are run from the root of the project, from a terminal:
+2. **Instalar las dependencias:**
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+   ```bash
+   npm intall
+   ```
 
-## 👀 Want to learn more?
+3. **Ejecutar el servidor de desarrollo:**
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+   ```bash
+   npm run dev
+   ```
+
+## Tecnologías Utilizadas
+
+- **Astro**: Framework para generar sitios estáticos rápidos y modernos.
+- **JavaScript**: Lenguaje de programación para la funcionalidad del sitio.
+- **CSS**: Para el diseño y la apariencia del sitio.
+- **HTML**: Estructura de las páginas web.
+
+## Licencia
+
+Este proyecto está licenciado bajo la Licencia MIT. Para más detalles, consulta el archivo [LICENSE](LICENSE).
