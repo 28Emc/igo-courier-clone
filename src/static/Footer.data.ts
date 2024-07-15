@@ -38,7 +38,7 @@ export const FOOTER_DATA: Footer = {
     {
       texto: 'Accesos Directos',
       elementos: [
-        { texto: 'Rastrea tu Envío', href: '#rastrear-envio', externalUrl: false },
+        { texto: 'Rastrea tu Envío', href: '/#rastrear-envio', externalUrl: false },
         { texto: 'Cotizador', href: '/cotizador', externalUrl: false },
         { texto: 'Zona clientes', href: 'https://fontend.igo.pe', externalUrl: true }
       ]
