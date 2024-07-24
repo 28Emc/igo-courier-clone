@@ -65,10 +65,16 @@ Sigue estos pasos para instalar y ejecutar el proyecto en tu entorno local:
    npm install
    ```
 
-3. **Ejecutar el servidor de desarrollo:**
+3. **Ejecutar el servidor de desarrollo de front:**
 
    ```bash
    npm run dev
+   ```
+
+4. **Ejecutar el servidor de desarrollo del fake backend:**
+
+   ```bash
+   npx json-server ./src/static/fake-db/db.json --routes ./src/static/fake-db/routes.json --delay 1000
    ```
 
 ## Tecnologías Utilizadas

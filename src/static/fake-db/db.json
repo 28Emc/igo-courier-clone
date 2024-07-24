@@ -1,0 +1,733 @@
+{
+  "locations": [
+    {
+      "id": "1242",
+      "codigo": "140101",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "Lima",
+      "latitud": null,
+      "longitud": null,
+      "status": "1"
+    },
+    {
+      "id": "1243",
+      "codigo": "140102",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "Ancon",
+      "latitud": null,
+      "longitud": null,
+      "status": "1"
+    },
+    {
+      "id": "1244",
+      "codigo": "140103",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "Ate",
+      "latitud": null,
+      "longitud": null,
+      "status": "1"
+    },
+    {
+      "id": "1245",
+      "codigo": "140104",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "Breña",
+      "latitud": null,
+      "longitud": null,
+      "status": "1"
+    },
+    {
+      "id": "1246",
+      "codigo": "140105",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "Carabayllo",
+      "latitud": null,
+      "longitud": null,
+      "status": "1"
+    },
+    {
+      "id": "1247",
+      "codigo": "140106",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "Comas",
+      "latitud": null,
+      "longitud": null,
+      "status": "1"
+    },
+    {
+      "id": "1248",
+      "codigo": "140107",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "Chaclacayo",
+      "latitud": null,
+      "longitud": null,
+      "status": "1"
+    },
+    {
+      "id": "1249",
+      "codigo": "140108",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "Chorrillos",
+      "latitud": null,
+      "longitud": null,
+      "status": "1"
+    },
+    {
+      "id": "1250",
+      "codigo": "140109",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "La Victoria",
+      "latitud": null,
+      "longitud": null,
+      "status": "1"
+    },
+    {
+      "id": "1251",
+      "codigo": "140110",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "La Molina",
+      "latitud": null,
+      "longitud": null,
+      "status": "1"
+    },
+    {
+      "id": "1252",
+      "codigo": "140111",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "Lince",
+      "latitud": null,
+      "longitud": null,
+      "status": "1"
+    },
+    {
+      "id": "1253",
+      "codigo": "140112",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "Lurigancho",
+      "latitud": null,
+      "longitud": null,
+      "status": "1"
+    },
+    {
+      "id": "1254",
+      "codigo": "140113",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "Lurin",
+      "latitud": null,
+      "longitud": null,
+      "status": "1"
+    },
+    {
+      "id": "1255",
+      "codigo": "140114",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "Magdalena Del Mar",
+      "latitud": null,
+      "longitud": null,
+      "status": "1"
+    },
+    {
+      "id": "1256",
+      "codigo": "140115",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "Miraflores",
+      "latitud": null,
+      "longitud": null,
+      "status": "1"
+    },
+    {
+      "id": "1257",
+      "codigo": "140116",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "Pachacamac",
+      "latitud": null,
+      "longitud": null,
+      "status": "1"
+    },
+    {
+      "id": "1258",
+      "codigo": "140117",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "Pueblo Libre",
+      "latitud": null,
+      "longitud": null,
+      "status": "1"
+    },
+    {
+      "id": "1259",
+      "codigo": "140118",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "Pucusana",
+      "latitud": null,
+      "longitud": null,
+      "status": "1"
+    },
+    {
+      "id": "1260",
+      "codigo": "140119",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "Puente Piedra",
+      "latitud": null,
+      "longitud": null,
+      "status": "1"
+    },
+    {
+      "id": "1261",
+      "codigo": "140120",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "Punta Hermosa",
+      "latitud": null,
+      "longitud": null,
+      "status": "1"
+    },
+    {
+      "id": "1262",
+      "codigo": "140121",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "Punta Negra",
+      "latitud": null,
+      "longitud": null,
+      "status": "1"
+    },
+    {
+      "id": "1263",
+      "codigo": "140122",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "Rimac",
+      "latitud": null,
+      "longitud": null,
+      "status": "1"
+    },
+    {
+      "id": "1264",
+      "codigo": "140123",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "San Bartolo",
+      "latitud": null,
+      "longitud": null,
+      "status": "1"
+    },
+    {
+      "id": "1265",
+      "codigo": "140124",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "San Isidro",
+      "latitud": null,
+      "longitud": null,
+      "status": "1"
+    },
+    {
+      "id": "1266",
+      "codigo": "140125",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "Barranco",
+      "latitud": null,
+      "longitud": null,
+      "status": "1"
+    },
+    {
+      "id": "1267",
+      "codigo": "140126",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "San Martin De Porres",
+      "latitud": null,
+      "longitud": null,
+      "status": "1"
+    },
+    {
+      "id": "1268",
+      "codigo": "140127",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "San Miguel",
+      "latitud": null,
+      "longitud": null,
+      "status": "1"
+    },
+    {
+      "id": "1269",
+      "codigo": "140128",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "Santa Maria Del Mar",
+      "latitud": null,
+      "longitud": null,
+      "status": "1"
+    },
+    {
+      "id": "1270",
+      "codigo": "140129",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "Santa Rosa",
+      "latitud": null,
+      "longitud": null,
+      "status": "1"
+    },
+    {
+      "id": "1271",
+      "codigo": "140130",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "Santiago De Surco",
+      "latitud": null,
+      "longitud": null,
+      "status": "1"
+    },
+    {
+      "id": "1272",
+      "codigo": "140131",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "Surquillo",
+      "latitud": null,
+      "longitud": null,
+      "status": "1"
+    },
+    {
+      "id": "1273",
+      "codigo": "140132",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "Villa Maria Del Triunfo",
+      "latitud": null,
+      "longitud": null,
+      "status": "1"
+    },
+    {
+      "id": "1274",
+      "codigo": "140133",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "Jesus Maria",
+      "latitud": null,
+      "longitud": null,
+      "status": "1"
+    },
+    {
+      "id": "1275",
+      "codigo": "140134",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "Independencia",
+      "latitud": null,
+      "longitud": null,
+      "status": "1"
+    },
+    {
+      "id": "1276",
+      "codigo": "140135",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "El Agustino",
+      "latitud": null,
+      "longitud": null,
+      "status": "1"
+    },
+    {
+      "id": "1277",
+      "codigo": "140136",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "San Juan De Miraflores",
+      "latitud": null,
+      "longitud": null,
+      "status": "1"
+    },
+    {
+      "id": "1278",
+      "codigo": "140137",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "San Juan De Lurigancho",
+      "latitud": null,
+      "longitud": null,
+      "status": "1"
+    },
+    {
+      "id": "1279",
+      "codigo": "140138",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "San Luis",
+      "latitud": null,
+      "longitud": null,
+      "status": "1"
+    },
+    {
+      "id": "1280",
+      "codigo": "140139",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "Cieneguilla",
+      "latitud": null,
+      "longitud": null,
+      "status": "1"
+    },
+    {
+      "id": "1281",
+      "codigo": "140140",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "San Borja",
+      "latitud": null,
+      "longitud": null,
+      "status": "1"
+    },
+    {
+      "id": "1282",
+      "codigo": "140141",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "Villa El Salvador",
+      "latitud": null,
+      "longitud": null,
+      "status": "1"
+    },
+    {
+      "id": "1283",
+      "codigo": "140142",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "Los Olivos",
+      "latitud": null,
+      "longitud": null,
+      "status": "1"
+    },
+    {
+      "id": "1284",
+      "codigo": "140143",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "Santa Anita",
+      "latitud": null,
+      "longitud": null,
+      "status": "1"
+    }
+  ],
+  "packagesizes": [
+    {
+      "id": "1",
+      "nombre": "sobre",
+      "alto": "21.55",
+      "ancho": "56.40",
+      "largo": "30.41",
+      "peso": "31.30",
+      "status": "1",
+      "created_by": "11",
+      "updated_by": "13",
+      "created_at": "2024-05-29 15:41:24",
+      "updated_at": "2024-05-29 15:41:24"
+    },
+    {
+      "id": "2",
+      "nombre": "xs",
+      "alto": "63.50",
+      "ancho": "47.35",
+      "largo": "35.50",
+      "peso": "52.19",
+      "status": "1",
+      "created_by": "7",
+      "updated_by": "4",
+      "created_at": "2024-05-29 15:41:25",
+      "updated_at": "2024-05-29 15:41:25"
+    },
+    {
+      "id": "3",
+      "nombre": "s",
+      "alto": "43.20",
+      "ancho": "73.30",
+      "largo": "16.63",
+      "peso": "35.38",
+      "status": "1",
+      "created_by": "8",
+      "updated_by": "14",
+      "created_at": "2024-05-29 15:41:25",
+      "updated_at": "2024-05-29 15:41:25"
+    },
+    {
+      "id": "4",
+      "nombre": "m",
+      "alto": "85.77",
+      "ancho": "10.78",
+      "largo": "38.05",
+      "peso": "69.94",
+      "status": "1",
+      "created_by": "4",
+      "updated_by": "2",
+      "created_at": "2024-05-29 15:41:25",
+      "updated_at": "2024-05-29 15:41:25"
+    },
+    {
+      "id": "5",
+      "nombre": "l",
+      "alto": "55.50",
+      "ancho": "71.91",
+      "largo": "19.16",
+      "peso": "26.60",
+      "status": "1",
+      "created_by": "5",
+      "updated_by": "13",
+      "created_at": "2024-05-29 15:41:25",
+      "updated_at": "2024-05-29 15:41:25"
+    },
+    {
+      "id": "6",
+      "nombre": "xl",
+      "alto": "62.82",
+      "ancho": "23.48",
+      "largo": "50.67",
+      "peso": "41.12",
+      "status": "1",
+      "created_by": "5",
+      "updated_by": "9",
+      "created_at": "2024-05-29 15:41:26",
+      "updated_at": "2024-05-29 15:41:26"
+    }
+  ],
+  "services": [
+    {
+      "id": "1",
+      "nombre": "SameDay",
+      "descripcion": "Se registraran los envios el mismo dia  y se entregaran el mismo dia.",
+      "motivo": null,
+      "hora_inicio": "01:00:00",
+      "hora_fin": "23:30:00",
+      "status": "1",
+      "created_at": "2024-05-29 15:41:28",
+      "updated_at": "2024-06-22 04:45:37"
+    },
+    {
+      "id": "2",
+      "nombre": "Programado",
+      "descripcion": "Descripción",
+      "motivo": null,
+      "hora_inicio": "08:31:10",
+      "hora_fin": "22:30:00",
+      "status": "1",
+      "created_at": "2024-05-29 15:41:29",
+      "updated_at": "2024-05-29 15:41:29"
+    },
+    {
+      "id": "3",
+      "nombre": "Express",
+      "descripcion": "Emvio prioritario",
+      "motivo": null,
+      "hora_inicio": "09:00:00",
+      "hora_fin": "13:00:00",
+      "status": "1",
+      "created_at": "2024-05-29 15:41:29",
+      "updated_at": "2024-05-29 15:41:29"
+    }
+  ],
+  "packages": [
+    {
+      "id": "66",
+      "codigo": "66837fdd07de6",
+      "fecha_recojo": "2024-07-01",
+      "hora_recojo": null,
+      "direccion_origen": "Via Parque Rimac 111, Lima, Perú",
+      "referencia_origen": "Sin ref.",
+      "latitud_origen": "-12.0388536",
+      "longitud_origen": "-77.0458115",
+      "etiqueta_origen": "Casa",
+      "nro_documento_emisor": "59847417",
+      "nombre_emisor": "Josué",
+      "telefono_emisor": "215728494",
+      "monto_total": "20.00",
+      "payment_code": "766576587565766",
+      "payment_incident": null,
+      "payment_date": null,
+      "payment_account": null,
+      "payment_phone": null,
+      "payment_metodo_pago": "Yape",
+      "payment_status_id": "1",
+      "currency_id": "1",
+      "location": {
+        "id": "1263",
+        "distrito": "Rimac"
+      },
+      "service": {
+        "id": "2",
+        "nombre": "Programado"
+      },
+      "user": {
+        "id": "14",
+        "nombres": "Josué",
+        "apellidos": "Perea",
+        "nro_documento": "59847417",
+        "telefono": "215728494"
+      },
+      "status": "1",
+      "package": {
+        "id": "66",
+        "codigo": "66837fdd09a4f",
+        "fecha_recojo": "2024-07-01",
+        "hora_recojo": null,
+        "direccion_origen": "Via Parque Rimac 111, Lima, Perú",
+        "referencia_origen": "Sin ref.",
+        "latitud_origen": "-12.0388536",
+        "longitud_origen": "-77.0458115",
+        "etiqueta_origen": "Casa",
+        "nro_documento_emisor": "59847417",
+        "nombre_emisor": "Josué",
+        "telefono_emisor": "215728494",
+        "fecha_entrega": "2024-07-04",
+        "hora_entrega": null,
+        "direccion_destino": "Av. Arequipa 1240, San Isidro, Perú",
+        "referencia_destino": "por ahi",
+        "latitud_destino": "-12.092453",
+        "longitud_destino": "-77.0332724",
+        "etiqueta_destino": "oficina",
+        "nro_documento_receptor": "27273737",
+        "nombre_receptor": "Pepito P. R.",
+        "telefono_receptor": "992283737",
+        "descripcion": "Paquete: sobre",
+        "largo": "30.41",
+        "ancho": "56.40",
+        "alto": "21.55",
+        "peso": "31.30",
+        "precio": "8.00",
+        "valor_producto": "55.00",
+        "valor_cobrado": null,
+        "fecha_cobro": null,
+        "nombre_producto": null,
+        "contraentrega": "1",
+        "fragile": "0",
+        "bankaccount_id": "0",
+        "currency_id": "1",
+        "unit_id": "1",
+        "package_status_id": "1",
+        "pickup_driver_id": "0",
+        "delivery_driver_id": "0",
+        "pickup_location": {
+          "id": "1263",
+          "distrito": "Rimac"
+        },
+        "delivery_location": {
+          "id": "1265",
+          "distrito": "San Isidro"
+        },
+        "packagesize": {
+          "id": "1",
+          "nombre": "sobre"
+        },
+        "service": {
+          "id": "2",
+          "nombre": "Programado"
+        },
+        "user": {
+          "id": "14",
+          "nombres": "Josué",
+          "apellidos": "Perea",
+          "nro_documento": "59847417",
+          "telefono": "215728494"
+        },
+        "shipment_id": "66",
+        "status": "1",
+        "statuses": [
+          {
+            "id": "190",
+            "package_status_id": "1",
+            "created_at": "2024-07-01 23:19:41"
+          }
+        ]
+      }
+    }
+  ],
+  "complaints": [
+    {
+      "nombre_completo": "ftytfty",
+      "numero_documento": "ftyftyf",
+      "direccion": "ftyftyf",
+      "referencia": "",
+      "titulo": "ftyfty",
+      "tipo": "Reclamo",
+      "descripcion_incidencia": "ftyfyftyfyt",
+      "pedido_sugerencia": "",
+      "status": 1,
+      "id": 1
+    }
+  ],
+  "messages": [
+    {
+      "nombre": "ftytyffty",
+      "apellido_paterno": "yftftyfyt",
+      "apellido_materno": "ftytyffty",
+      "correo": "edi@live.it",
+      "telefono": "997829873",
+      "rubro": "hbhg",
+      "servicio": "Programado",
+      "rango_envio": "Menos de 20",
+      "asunto": "gyuguy",
+      "mensaje": "gygyug u",
+      "status": 1,
+      "id": 1
+    },
+    {
+      "nombre": "ftytiffty",
+      "apellido_paterno": "ftyftuyftuy",
+      "apellido_materno": "ftutfyuftyu",
+      "correo": "edi@live.it",
+      "telefono": "999999999",
+      "rubro": "76rftfytfy",
+      "servicio": "Programado",
+      "rango_envio": "De 21 a 50",
+      "asunto": "ftyf tytyf",
+      "mensaje": "fty f tfty ft y",
+      "status": 1,
+      "id": 2
+    },
+    {
+      "nombre": "f5665ft",
+      "apellido_paterno": "ftytyf",
+      "apellido_materno": "ftyuftyftyu",
+      "correo": "edi@live.it",
+      "telefono": "987678688",
+      "rubro": "huuhuhiui",
+      "servicio": "Programado",
+      "rango_envio": "De 21 a 50",
+      "asunto": "huih",
+      "mensaje": "uihuih  ",
+      "status": 1,
+      "id": 3
+    }
+  ],
+  "quotation": [
+    {
+      "id": 1,
+      "origin_location_id": 1243,
+      "target_location_id": 1248,
+      "packagesize_id": 2,
+      "service_id": 1,
+      "quotation": 12,
+      "quotation_express": 18
+    }
+  ]
+}

@@ -14,7 +14,7 @@ export const ENDPOINT_V1 = {
   },
   service: {
     list: `${API_V1}/services`,
-    packageQuotation: `${API_V1}/services/quotation`,
+    packageQuotation: `${API_V1}/quotation`,
   },
   contact: {
     messages: `${API_V1}/messages`,
