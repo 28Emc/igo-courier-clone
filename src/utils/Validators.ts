@@ -1,0 +1,3 @@
+export const MIN_PHONE_NUMBER = 900000000;
+export const MAX_PHONE_NUMBER = 999999999;
+

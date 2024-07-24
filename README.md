@@ -62,7 +62,7 @@ Sigue estos pasos para instalar y ejecutar el proyecto en tu entorno local:
 2. **Instalar las dependencias:**
 
    ```bash
-   npm intall
+   npm install
    ```
 
 3. **Ejecutar el servidor de desarrollo:**
@@ -73,9 +73,11 @@ Sigue estos pasos para instalar y ejecutar el proyecto en tu entorno local:
 
 ## Tecnologías Utilizadas
 
-- **Astro**: Framework para generar sitios estáticos rápidos y modernos.
+- **Astro**: Framework para generar sitios estáticos rápidos y modernos (utilizado para el sitio web en general).
+- **Vue.JS**: Framework de JavaScript (utilizado como isla para los formularios).
+- **React**: Framework de JavaScript (utilizado como isla para las notificaciones).
 - **JavaScript**: Lenguaje de programación para la funcionalidad del sitio.
-- **CSS**: Para el diseño y la apariencia del sitio.
+- **CSS**: Para el diseño y la apariencia del sitio (TailwindCSS utilizado pr debajo).
 - **HTML**: Estructura de las páginas web.
 
 ## Licencia

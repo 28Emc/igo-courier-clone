@@ -13,7 +13,8 @@
                 <input type="text" id="nombre_completo" name="nombre_completo" v-model="nombre_completo"
                     v-bind:disabled="loading"
                     class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-igo-light-text-button focus:border-igo-light-text-button block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-igo-light-text-button dark:shadow-sm-light"
-                    placeholder="Escribe tu nombre completo" required />
+                    :class="{ 'border-red-500 dark:border-red-500': v$.nombre_completo?.$error }"
+                    @blur="v$.nombre_completo.$touch" placeholder="Escribe tu nombre completo" />
             </div>
             <div class="basis-full">
                 <label for="numero_documento" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
@@ -22,7 +23,8 @@
                 <input type="text" id="numero_documento" name="numero_documento" v-model="numero_documento"
                     v-bind:disabled="loading"
                     class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-igo-light-text-button focus:border-igo-light-text-button block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-igo-light-text-button dark:shadow-sm-light"
-                    placeholder="Escribe tu nro. de documento" required />
+                    :class="{ 'border-red-500 dark:border-red-500': v$.numero_documento?.$error }"
+                    @blur="v$.numero_documento.$touch" placeholder="Escribe tu nro. de documento" />
             </div>
         </div>
         <div
@@ -32,7 +34,8 @@
                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Dirección</label>
                 <input type="text" id="direccion" name="direccion" v-model="direccion" v-bind:disabled="loading"
                     class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-igo-light-text-button focus:border-igo-light-text-button dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-igo-light-text-button dark:shadow-sm-light"
-                    placeholder="Escribe tu dirección" required />
+                    :class="{ 'border-red-500 dark:border-red-500': v$.direccion?.$error }" @blur="v$.direccion.$touch"
+                    placeholder="Escribe tu dirección" />
             </div>
             <div class="basis-full">
                 <label for="referencia"
@@ -40,7 +43,7 @@
                     (Opcional)</label>
                 <input type="text" id="referencia" name="referencia" v-model="referencia" v-bind:disabled="loading"
                     class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-igo-light-text-button focus:border-igo-light-text-button dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-igo-light-text-button dark:shadow-sm-light"
-                    placeholder="Escribe tu dirección" />
+                    placeholder="Escribe una referencia" />
             </div>
         </div>
 
@@ -55,12 +58,14 @@
                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Titulo</label>
                 <input type="text" id="titulo" name="titulo" v-model="titulo" v-bind:disabled="loading"
                     class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-igo-light-text-button focus:border-igo-light-text-button dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-igo-light-text-button dark:shadow-sm-light"
+                    :class="{ 'border-red-500 dark:border-red-500': v$.titulo?.$error }" @blur="v$.titulo.$touch"
                     placeholder="Escribe un título para tu incidencia" />
             </div>
             <div class="basis-full">
                 <label for="tipo" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Tipo</label>
                 <select id="tipo" name="tipo" v-model="tipo" v-bind:disabled="loading"
-                    class="bg-gray-50 dark:bg-gray-700 border dark:border-gray-600 dark:placeholder:text-gray-300 placeholder:text-gray-200 border-gray-300 text-gray-900 dark:text-gray-400 text-sm rounded-lg focus:ring-igo-light-text focus:border-igo-light-text block w-full p-2.5 disabled:placeholder:text-gray-400 disabled:text-gray-400 disabled:hover:cursor-not-allowed">
+                    class="bg-gray-50 dark:bg-gray-700 border dark:border-gray-600 dark:placeholder:text-gray-300 placeholder:text-gray-200 border-gray-300 text-gray-900 dark:text-gray-400 text-sm rounded-lg focus:ring-igo-light-text focus:border-igo-light-text block w-full p-2.5 disabled:placeholder:text-gray-400 disabled:text-gray-400 disabled:hover:cursor-not-allowed"
+                    :class="{ 'border-red-500 dark:border-red-500': v$.tipo?.$error }" @blur="v$.tipo.$touch">
                     <option value="" class="text-gray-300">Seleccionar un tipo de incidencia</option>
                     <option v-for="item in tiposDeIncidenciaCbo" :value=item.descripcion>
                         {{ item.descripcion }}
@@ -76,7 +81,9 @@
             <textarea id="descripcion_incidencia" rows="6" name="descripcion_incidencia"
                 v-model="descripcion_incidencia" v-bind:disabled="loading"
                 class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-igo-light-text-button focus:border-igo-light-text-button dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-igo-light-text-button"
-                placeholder="Escribe la descripción de tu incidencia" required></textarea>
+                :class="{ 'border-red-500 dark:border-red-500': v$.descripcion_incidencia?.$error }"
+                @blur="v$.descripcion_incidencia.$touch"
+                placeholder="Escribe la descripción de tu incidencia"></textarea>
         </div>
         <div class="basis-full animate-fade-up animate-once animate-duration-[700ms] animate-ease-in">
             <label for="pedido_sugerencia" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
@@ -87,8 +94,8 @@
                 class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-igo-light-text-button focus:border-igo-light-text-button dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-igo-light-text-button"
                 placeholder="Escribe tu pedido u sugerencia"></textarea>
         </div>
-        <button type="submit" class="py-3 px-5 text-sm font-medium text-center text-gray-dark dark:text-igo-light-text rounded-lg bg-igo-light-bg-button sm:w-fit hover:bg-igo-hover-bg-button hover:text-igo-light-bg dark:hover:text-igo-light-bg dark:bg-igo-light-bg-button dark:hover:bg-igo-light-text disabled:bg-gray-400 disabled:text-gray-dark
-              animate-fade-up animate-once animate-duration-[800ms] animate-ease-in">
+        <button type="submit"
+            class="text-nowrap flex w-full sm:w-auto py-3 px-5 text-sm font-medium text-center text-gray-dark dark:text-igo-light-text rounded-lg bg-igo-light-bg-button hover:bg-igo-hover-bg-button hover:text-igo-light-bg dark:hover:text-igo-light-bg dark:bg-igo-light-bg-button dark:hover:bg-igo-light-text disabled:bg-gray-400 disabled:text-gray-dark">
             <svg v-if="loading" aria-hidden="true" role="status" class="inline w-4 h-4 me-3 text-gray-dark animate-spin"
                 viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -99,19 +106,28 @@
                     fill="currentColor" />
             </svg>
             <span v-if="loading">Espere...</span>
-            <span v-if="!loading">Enviar Mensaje</span>
+            <svg v-if="!loading" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-brand-telegram">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" />
+            </svg>
+            <span v-if="!loading" class="ml-2">Enviar Mensaje</span>
         </button>
     </form>
 </template>
 <script>
 import { toast } from "sonner";
 import { sendComplaintForm } from "../services/ComplaintService";
+import { useVuelidate } from '@vuelidate/core';
+import { required } from '@vuelidate/validators';
 
 let loading = false;
 
 export default {
     data() {
         return {
+            v$: useVuelidate(),
             nombre_completo: "",
             numero_documento: "",
             direccion: "",
@@ -121,18 +137,34 @@ export default {
             descripcion_incidencia: "",
             pedido_sugerencia: "",
             status: 1,
-            tiposDeIncidenciaCbo: [
-                { id: 1, descripcion: 'Queja' },
-                { id: 2, descripcion: 'Reclamo' },
-            ],
+            tiposDeIncidenciaCbo: [],
             loading: false,
             complaintRes: null
         }
     },
+    validations() {
+        return {
+            nombre_completo: { required },
+            numero_documento: { required },
+            direccion: { required },
+            referencia: {},
+            titulo: { required },
+            tipo: { required },
+            descripcion_incidencia: { required },
+            pedido_sugerencia: {},
+        }
+    },
+    mounted() {
+        this.tiposDeIncidenciaCbo = [
+            { id: 1, descripcion: 'Queja' },
+            { id: 2, descripcion: 'Reclamo' },
+        ];
+        this.clearComplaintForm();
+    },
     methods: {
         async postComplaintForm() {
-            if (this.isInvalidForm()) {
-                toast.warning('Rellenar todos los campos.');
+            if (await this.isInvalidForm()) {
+                toast.warning('Rellenar los campos requeridos.');
                 return;
             }
 
@@ -162,8 +194,9 @@ export default {
             toast.success(response.data);
             this.clearComplaintForm();
         },
-        isInvalidForm() {
-            return this.tipo === "";
+        async isInvalidForm() {
+            const result = await this.v$.$validate();
+            return !result;
         },
         clearComplaintForm() {
             this.nombre_completo = "";
@@ -177,6 +210,7 @@ export default {
             this.status = 1;
             this.loading = false;
             this.complaintRes = null;
+            this.v$.$reset();
         }
     }
 }

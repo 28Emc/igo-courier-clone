@@ -15,7 +15,9 @@
                             Servicio
                         </label>
                         <select id="idTipoServicio" name="idTipoServicio" v-model="idTipoServicio"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-igo-light-text focus:border-igo-light-text block w-full p-2.5 disabled:hover:cursor-not-allowed">
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-igo-light-text focus:border-igo-light-text block w-full p-2.5 disabled:hover:cursor-not-allowed"
+                            :class="{ 'border-red-500 dark:border-red-500': v$.idTipoServicio?.$error }"
+                            @blur="v$.idTipoServicio.$touch">
                             <option value="">Seleccionar un servicio</option>
                             <option v-for="item in tiposDeServicioCbo" :value="item.id">
                                 {{ item.nombre }}
@@ -28,7 +30,9 @@
                             Distrito de Origen
                         </label>
                         <select id="idUbigeoOrigen" name="idUbigeoOrigen" v-model="idUbigeoOrigen"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-igo-light-text focus:border-igo-light-text block w-full p-2.5 disabled:hover:cursor-not-allowed">
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-igo-light-text focus:border-igo-light-text block w-full p-2.5 disabled:hover:cursor-not-allowed"
+                            :class="{ 'border-red-500 dark:border-red-500': v$.idUbigeoOrigen?.$error }"
+                            @blur="v$.idUbigeoOrigen.$touch">
                             <option value="">Seleccionar un distrito</option>
                             <option v-for="item in distritosCbo" :value="item.id">
                                 {{ item.ubigeo }}
@@ -60,7 +64,9 @@
                                     Distrito de Destino
                                 </label>
                                 <select id="idUbigeoDestino" name="idUbigeoDestino" v-model="idUbigeoDestino"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-igo-light-text focus:border-igo-light-text block w-full p-2.5 disabled:hover:cursor-not-allowed">
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-igo-light-text focus:border-igo-light-text block w-full p-2.5 disabled:hover:cursor-not-allowed"
+                                    :class="{ 'border-red-500 dark:border-red-500': v$.idUbigeoDestino?.$error }"
+                                    @blur="v$.idUbigeoDestino.$touch">
                                     <option value="">Seleccionar un distrito</option>
                                     <option v-for="item in distritosCbo" :value="item.id">
                                         {{ item.ubigeo }}
@@ -72,7 +78,9 @@
                                     Tipo de Paquete
                                 </label>
                                 <select id="id" name="id" v-model="id" @change="onTipoPaqueteChange(id)"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-igo-light-text focus:border-igo-light-text block w-full p-2.5 disabled:placeholder:text-gray-400 disabled:text-gray-400 disabled:hover:cursor-not-allowed">
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-igo-light-text focus:border-igo-light-text block w-full p-2.5 disabled:placeholder:text-gray-400 disabled:text-gray-400 disabled:hover:cursor-not-allowed"
+                                    :class="{ 'border-red-500 dark:border-red-500': v$.id?.$error }"
+                                    @blur="v$.id.$touch">
                                     <option value="">Seleccionar un tipo</option>
                                     <option v-for="item in tiposDePaqueteCbo" :value="item.id">
                                         {{ item.nombre }}
@@ -87,7 +95,8 @@
                                 <input type="number" min="0.00" step="0.01" name="altoPaquete" id="altoPaquete"
                                     v-model="altoPaquete"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-igo-light-text focus:border-igo-light-text block w-full p-2.5 disabled:placeholder:text-gray-400 disabled:text-gray-400 disabled:hover:cursor-not-allowed"
-                                    placeholder="0.00" required>
+                                    :class="{ 'border-red-500 dark:border-red-500': v$.altoPaquete?.$error }"
+                                    @blur="v$.altoPaquete.$touch" placeholder="0.00" />
                             </div>
                             <div class="col-span-3 w-full">
                                 <label for="anchoPaquete" class="block mb-2 text-sm font-medium text-gray-900">
@@ -96,7 +105,8 @@
                                 <input type="number" min="0.00" step="0.01" name="anchoPaquete" id="anchoPaquete"
                                     v-model="anchoPaquete"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-igo-light-text focus:border-igo-light-text block w-full p-2.5 disabled:placeholder:text-gray-400 disabled:text-gray-400 disabled:hover:cursor-not-allowed"
-                                    placeholder="0.00" required>
+                                    :class="{ 'border-red-500 dark:border-red-500': v$.anchoPaquete?.$error }"
+                                    @blur="v$.anchoPaquete.$touch" placeholder="0.00" />
                             </div>
                             <div class="col-span-3 w-full">
                                 <label for="largoPaquete" class="block mb-2 text-sm font-medium text-gray-900">
@@ -105,7 +115,8 @@
                                 <input type="number" min="0.00" step="0.01" name="largoPaquete" id="largoPaquete"
                                     v-model="largoPaquete"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-igo-light-text focus:border-igo-light-text block w-full p-2.5 disabled:placeholder:text-gray-400 disabled:text-gray-400 disabled:hover:cursor-not-allowed"
-                                    placeholder="0.00" required>
+                                    :class="{ 'border-red-500 dark:border-red-500': v$.largoPaquete?.$error }"
+                                    @blur="v$.largoPaquete.$touch" placeholder="0.00" />
                             </div>
                             <div class="col-span-3 w-full">
                                 <label for="pesoPaquete" class="block mb-2 text-sm font-medium text-gray-900">
@@ -114,7 +125,8 @@
                                 <input type="number" min="0.00" step="0.01" name="pesoPaquete" id="pesoPaquete"
                                     v-model="pesoPaquete"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-igo-light-text focus:border-igo-light-text block w-full p-2.5 disabled:placeholder:text-gray-400 disabled:text-gray-400 disabled:hover:cursor-not-allowed"
-                                    placeholder="0.00" required>
+                                    :class="{ 'border-red-500 dark:border-red-500': v$.pesoPaquete?.$error }"
+                                    @blur="v$.pesoPaquete.$touch" placeholder="0.00" />
                             </div>
 
                         </div>
@@ -169,10 +181,13 @@
 <script>
 import { toast } from 'sonner';
 import { fetchCustomLocations, fetchCustomPackageTypes, fetchCustomServiceTypes, OK, sendEstimatedPricingForm, SERVICIO_EXPRES_ID } from '../services/EstimatedPricingService';
+import { useVuelidate } from '@vuelidate/core';
+import { required } from '@vuelidate/validators';
 
 export default {
     data() {
         return {
+            v$: useVuelidate(),
             idTipoServicio: '',
             idUbigeoOrigen: '',
             idUbigeoDestino: '',
@@ -187,6 +202,18 @@ export default {
             loadingCotizacion: false,
             cotizacion: 0,
             estimatedPricingRes: null
+        }
+    },
+    validations() {
+        return {
+            idTipoServicio: { required },
+            idUbigeoOrigen: { required },
+            idUbigeoDestino: { required },
+            id: { required },
+            altoPaquete: { required },
+            anchoPaquete: { required },
+            largoPaquete: { required },
+            pesoPaquete: { required }
         }
     },
     mounted() {
@@ -272,7 +299,7 @@ export default {
             }
         },
         async sendEstimatedPricingForm() {
-            if (this.isInvalidForm()) {
+            if (await this.isInvalidForm()) {
                 toast.warning('Rellenar todos los campos.');
                 return;
             }
@@ -298,15 +325,9 @@ export default {
             const isExpress = +this.idTipoServicio === SERVICIO_EXPRES_ID;
             this.cotizacion = isExpress ? this.estimatedPricingRes.quotation_express : this.estimatedPricingRes.quotation;
         },
-        isInvalidForm() {
-            return this.idTipoServicio === '' ||
-                this.idUbigeoOrigen === '' ||
-                this.idUbigeoDestino === '' ||
-                this.id === '' ||
-                this.altoPaquete === '' ||
-                this.anchoPaquete === '' ||
-                this.largoPaquete === '' ||
-                this.pesoPaquete === '';
+        async isInvalidForm() {
+            const result = await this.v$.$validate();
+            return !result;
         },
         clearEstimatedPricingForm() {
             this.idTipoServicio = '';
@@ -320,6 +341,7 @@ export default {
             this.loadingCotizacion = false;
             this.cotizacion = 0;
             this.estimatedPricingRes = null;
+            this.v$.$reset();
         }
     }
 }

@@ -14,7 +14,8 @@
             <input id="trackingCode" name="trackingCode" v-model="trackingCode" v-bind:disabled="loading" type="text"
                 class="w-full block p-2.5 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg
                   bg-gray-50 dark:bg-gray-50 dark:border-gray-600 dark:placeholder-gray-400 placeholder:text-gray-400 focus:border-gray-50 focus:ring-gray-50 disabled:cursor-not-allowed transition"
-                placeholder="Ingresar código de envío" required />
+                :class="{ 'border-red-500 dark:border-red-500': v$.trackingCode?.$error }"
+                @blur="v$.trackingCode.$touch" placeholder="Ingresar código de envío" />
         </div>
         <button type="submit" v-if="!trackingRes" v-bind:disabled="loading"
             class="tracking-btn flex items-center text-nowrap px-4 py-2 text-md font-medium text-gray-dark rounded-lg bg-igo-light-bg-button
@@ -178,14 +179,22 @@ import { toast } from 'sonner';
 import { trackingByCode, OK } from '../services/TrackingService';
 import { ESTADOS } from "../static/EstadosEnvios.constant";
 import { DateTime } from 'luxon';
+import { useVuelidate } from '@vuelidate/core';
+import { required } from '@vuelidate/validators';
 
 export default {
     data() {
         return {
+            v$: useVuelidate(),
             trackingCode: '',
             loading: false,
             trackingRes: null,
             estadosList: []
+        }
+    },
+    validations() {
+        return {
+            trackingCode: { required }
         }
     },
     mounted() {
@@ -193,7 +202,8 @@ export default {
     },
     methods: {
         async trackPackage() {
-            if (!this.trackingCode || this.trackingCode.length < 1) {
+            if (await this.isInvalidForm()) {
+                toast.warning('Código de tracking requerido.');
                 return;
             }
 
@@ -210,6 +220,10 @@ export default {
             this.trackingRes = response.data;
             this.setStatuses(this.trackingRes);
         },
+        async isInvalidForm() {
+            const result = await this.v$.$validate();
+            return !result;
+        },
         setStatuses(trackingRes) {
             const estadosList = new Map(ESTADOS.map(obj => ([obj.id, obj.descripcion])));
             trackingRes['package']['statuses'].forEach(status => {
@@ -225,6 +239,7 @@ export default {
             this.trackingCode = '';
             this.loading = false;
             this.trackingRes = null;
+            this.v$.$reset();
         }
     },
 }

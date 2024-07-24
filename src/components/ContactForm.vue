@@ -7,7 +7,8 @@
                 </label>
                 <input type="text" id="nombre" name="nombre" v-model="nombre" v-bind:disabled="loading"
                     class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-igo-light-text-button focus:border-igo-light-text-button block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-igo-light-text-button dark:shadow-sm-light"
-                    placeholder="Escribe tu nombre" required />
+                    :class="{ 'border-red-500 dark:border-red-500': v$.nombre?.$error }" @blur="v$.nombre.$touch"
+                    placeholder="Escribe tu nombre" />
             </div>
             <div class="w-full">
                 <label for="apellido_paterno" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
@@ -16,7 +17,8 @@
                 <input type="text" id="apellido_paterno" name="apellido_paterno" v-model="apellido_paterno"
                     v-bind:disabled="loading"
                     class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-igo-light-text-button focus:border-igo-light-text-button block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-igo-light-text-button dark:shadow-sm-light"
-                    placeholder="Escribe tu apellido paterno" required />
+                    :class="{ 'border-red-500 dark:border-red-500': v$.apellido_paterno?.$error }"
+                    @blur="v$.apellido_paterno.$touch" placeholder="Escribe tu apellido paterno" />
             </div>
             <div class="w-full">
                 <label for="apellido_materno" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
@@ -25,7 +27,8 @@
                 <input type="text" id="apellido_materno" name="apellido_materno" v-model="apellido_materno"
                     v-bind:disabled="loading"
                     class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-igo-light-text-button focus:border-igo-light-text-button block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-igo-light-text-button dark:shadow-sm-light"
-                    placeholder="Escribe tu apellido materno" required />
+                    :class="{ 'border-red-500 dark:border-red-500': v$.apellido_paterno?.$error }"
+                    @blur="v$.apellido_materno.$touch" placeholder="Escribe tu apellido materno" />
             </div>
         </div>
 
@@ -36,7 +39,8 @@
                 </label>
                 <input type="email" id="correo" name="correo" v-model="correo" v-bind:disabled="loading"
                     class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-igo-light-text-button focus:border-igo-light-text-button block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-igo-light-text-button dark:shadow-sm-light"
-                    placeholder="example@email.com" required />
+                    :class="{ 'border-red-500 dark:border-red-500': v$.correo?.$error }" @blur="v$.correo.$touch"
+                    placeholder="example@email.com" />
             </div>
             <div class="w-full">
                 <label for="telefono" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
@@ -44,7 +48,8 @@
                 </label>
                 <input type="text" id="telefono" name="telefono" v-model="telefono" v-bind:disabled="loading"
                     class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-igo-light-text-button focus:border-igo-light-text-button block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-igo-light-text-button dark:shadow-sm-light"
-                    placeholder="987654321" required />
+                    :class="{ 'border-red-500 dark:border-red-500': v$.telefono?.$error }" @blur="v$.telefono.$touch"
+                    placeholder="987654321" />
             </div>
             <div class="w-full">
                 <label for="rubro" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
@@ -52,7 +57,8 @@
                 </label>
                 <input type="text" id="rubro" name="rubro" v-model="rubro" v-bind:disabled="loading"
                     class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-igo-light-text-button focus:border-igo-light-text-button block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-igo-light-text-button dark:shadow-sm-light"
-                    placeholder="Escribe tu rubro" required />
+                    :class="{ 'border-red-500 dark:border-red-500': v$.rubro?.$error }" @blur="v$.rubro.$touch"
+                    placeholder="Escribe tu rubro" />
             </div>
         </div>
 
@@ -61,7 +67,8 @@
                 <label for="servicio"
                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Servicio</label>
                 <select id="servicio" name="servicio" v-model="servicio" v-bind:disabled="loading"
-                    class="bg-gray-50 dark:bg-gray-700 border dark:border-gray-600 dark:placeholder:text-gray-300 placeholder:text-gray-200 border-gray-300 text-gray-900 dark:text-gray-400 text-sm rounded-lg focus:ring-igo-light-text focus:border-igo-light-text block w-full p-2.5 disabled:placeholder:text-gray-400 disabled:text-gray-400 disabled:hover:cursor-not-allowed">
+                    class="bg-gray-50 dark:bg-gray-700 border dark:border-gray-600 dark:placeholder:text-gray-300 placeholder:text-gray-200 border-gray-300 text-gray-900 dark:text-gray-400 text-sm rounded-lg focus:ring-igo-light-text focus:border-igo-light-text block w-full p-2.5 disabled:placeholder:text-gray-400 disabled:text-gray-400 disabled:hover:cursor-not-allowed"
+                    :class="{ 'border-red-500 dark:border-red-500': v$.servicio?.$error }" @blur="v$.servicio.$touch">
                     <option value="" class="text-gray-300">Seleccionar un tipo de servicio</option>
                     <option v-for="item in tiposDeServiciosCbo" :value=item.descripcion>
                         {{ item.descripcion }}
@@ -72,7 +79,9 @@
                 <label for="rango_envio" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Rango
                     de envío (mensual)</label>
                 <select id="rango_envio" name="rango_envio" v-model="rango_envio" v-bind:disabled="loading"
-                    class="bg-gray-50 dark:bg-gray-700 border dark:border-gray-600 dark:placeholder:text-gray-300 placeholder:text-gray-200 border-gray-300 text-gray-900 dark:text-gray-400 text-sm rounded-lg focus:ring-igo-light-text focus:border-igo-light-text block w-full p-2.5 disabled:placeholder:text-gray-400 disabled:text-gray-400 disabled:hover:cursor-not-allowed">
+                    class="bg-gray-50 dark:bg-gray-700 border dark:border-gray-600 dark:placeholder:text-gray-300 placeholder:text-gray-200 border-gray-300 text-gray-900 dark:text-gray-400 text-sm rounded-lg focus:ring-igo-light-text focus:border-igo-light-text block w-full p-2.5 disabled:placeholder:text-gray-400 disabled:text-gray-400 disabled:hover:cursor-not-allowed"
+                    :class="{ 'border-red-500 dark:border-red-500': v$.rango_envio?.$error }"
+                    @blur="v$.rango_envio.$touch">
                     <option value="" class="text-gray-300">Seleccionar un rango de envío</option>
                     <option v-for="item in rangoEnviosMensualCbo" :value=item.descripcion>
                         {{ item.descripcion }}
@@ -84,7 +93,8 @@
                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Asunto</label>
                 <input type="text" id="subject" name="asunto" v-model="asunto" v-bind:disabled="loading"
                     class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-igo-light-text-button focus:border-igo-light-text-button dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-igo-light-text-button dark:shadow-sm-light"
-                    placeholder="Haznos saber en que podemos ayudarte" required />
+                    :class="{ 'border-red-500 dark:border-red-500': v$.asunto?.$error }" @blur="v$.asunto.$touch"
+                    placeholder="Haznos saber en que podemos ayudarte" />
             </div>
         </div>
 
@@ -94,7 +104,8 @@
             </label>
             <textarea id="message" rows="6" name="mensaje" v-model="mensaje" v-bind:disabled="loading"
                 class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-igo-light-text-button focus:border-igo-light-text-button dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-igo-light-text-button"
-                placeholder="Deja tu comentario aqui" required></textarea>
+                :class="{ 'border-red-500 dark:border-red-500': v$.mensaje?.$error }" @blur="v$.mensaje.$touch"
+                placeholder="Deja tu comentario aqui"></textarea>
         </div>
         <button type="submit" v-bind:disabled="loading"
             class="text-nowrap flex w-full sm:w-auto py-3 px-5 text-sm font-medium text-center text-gray-dark dark:text-igo-light-text rounded-lg bg-igo-light-bg-button hover:bg-igo-hover-bg-button hover:text-igo-light-bg dark:hover:text-igo-light-bg dark:bg-igo-light-bg-button dark:hover:bg-igo-light-text disabled:bg-gray-400 disabled:text-gray-dark">
@@ -122,12 +133,16 @@
 import { toast } from "sonner";
 import { sendContactForm } from "../services/ContactService";
 import { HOME_DATA } from "../static/Home.data";
+import { useVuelidate } from '@vuelidate/core';
+import { required, email, between } from '@vuelidate/validators';
+import { MAX_PHONE_NUMBER, MIN_PHONE_NUMBER } from "../utils/Validators";
 
 let loading = false;
 
 export default {
     data() {
         return {
+            v$: useVuelidate(),
             nombre: "",
             apellido_paterno: "",
             apellido_materno: "",
@@ -143,6 +158,20 @@ export default {
             rangoEnviosMensualCbo: [],
             loading: false,
             contactRes: null
+        }
+    },
+    validations() {
+        return {
+            nombre: { required },
+            apellido_paterno: { required },
+            apellido_materno: { required },
+            correo: { required, email },
+            telefono: { required, between: between(MIN_PHONE_NUMBER, MAX_PHONE_NUMBER) },
+            rubro: { required },
+            servicio: { required },
+            rango_envio: { required },
+            asunto: { required },
+            mensaje: { required }
         }
     },
     mounted() {
@@ -165,7 +194,7 @@ export default {
     },
     methods: {
         async postContactForm() {
-            if (this.isInvalidForm()) {
+            if (await this.isInvalidForm()) {
                 toast.warning('Rellenar todos los campos.');
                 return;
             }
@@ -198,8 +227,9 @@ export default {
             toast.success(response.data);
             this.clearContactForm();
         },
-        isInvalidForm() {
-            return this.servicio === "" || this.rango_envio === "";
+        async isInvalidForm() {
+            const result = await this.v$.$validate();
+            return !result;
         },
         clearContactForm() {
             this.nombre = "";
@@ -215,6 +245,7 @@ export default {
             this.status = 1;
             this.loading = false;
             this.contactRes = null;
+            this.v$.$reset();
         }
     }
 }
